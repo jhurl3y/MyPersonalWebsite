@@ -1,0 +1,42 @@
+.react-reveal {
+  width: 100%;
+}
+
+.twitter-timeline {
+  width: 100vw !important;
+}
+
+.is-sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+}
+
+.cookie-banner-container {
+  background: rgba(43, 55, 59, 0.5) !important;
+  border-radius: 3px;
+  width: 370px !important;
+  height: 50px !important;
+  margin: 1% auto;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.cookie-banner-content {
+  margin: 15px 0 15px 15px !important;
+}
+
+.cookie-banner-button {
+  margin: 15px 15px 15px 0 !important;
+  transform: scale(1.3, 1);
+  font-size: 18px;
+  line-height: 0.5;
+  background: none !important;
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .vertical-timeline--animate * {
+    animation: 0s !important;
+    visibility: visible !important;
+  }
+}

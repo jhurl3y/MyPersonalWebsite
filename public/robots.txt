@@ -1,0 +1,3 @@
+Sitemap: https://jameshurley.ie/sitemap.xml
+User-agent: *
+Allow: /

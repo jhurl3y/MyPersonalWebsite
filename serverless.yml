@@ -1,0 +1,35 @@
+service: ${file(./config.${self:custom.currentStage}.json):SERVICE}
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${env:NODE_ENV}
+  region: eu-west-1
+  environment:
+    NODE_ENV: ${env:NODE_ENV}
+
+functions:
+  server:
+    handler: index.server
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+
+plugins:
+  - serverless-apigw-binary
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+custom:
+  defaultStage: dev
+  currentStage: ${opt:stage, self:custom.defaultStage}
+  apigwBinary:
+    types:
+      - "*/*"
+
+package:
+  exclude:
+    - pages/**
+    - components/**
+    - src/**
+    - utils/**
