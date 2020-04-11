@@ -13,6 +13,7 @@ import {
 } from "../../utils/constants";
 import { getBackground, getBackgroundUrls } from "../../utils/helpers";
 import Styles from "./styles";
+import chunk from "lodash.chunk";
 
 const LeftButton = ({ onClick }) => {
   return (
@@ -91,17 +92,34 @@ export default () => {
   };
 
   async function loadBackgrounds() {
-    for (let index = 0; index < backgroundUrls.length; index++) {
-      const background = await getBackground(backgroundUrls[index]);
-      setBackgrounds(backgrounds => [...backgrounds, background]);
+    // Backgrounds already fetched
+    if (backgrounds.length >= backgroundUrls.length) {
+      return;
     }
+
+    // Split the backgrounds into chunks
+    const chunkedBackgroundUrls = chunk(backgroundUrls, 3);
+    chunkedBackgroundUrls.map(chunkOfBackgroundUrls => {
+      // Fetch all backgrounds in a chunk at once
+      Promise.all(chunkOfBackgroundUrls.map(url => getBackground(url))).then(
+        fetchedBackgrounds => {
+          setBackgrounds(backgrounds => [
+            ...backgrounds,
+            ...fetchedBackgrounds
+          ]);
+        }
+      );
+    });
   }
 
+  // Same as componentDidMount; only execute on the first render
   useEffect(() => {
-    if (process.browser && backgrounds.length === 1) {
+    if (process.browser) {
       loadBackgrounds();
     }
+  }, []);
 
+  useEffect(() => {
     window.addEventListener("resize", onResize);
     window.addEventListener("keydown", onKeyDown);
 
@@ -109,7 +127,7 @@ export default () => {
       window.removeEventListener("resize", onResize);
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [index, translateValue, backgrounds]);
+  }, [index, translateValue]);
 
   return (
     <div className={classes.outer}>
