@@ -9,12 +9,12 @@ import {
   DESKTOP_IMAGE_PATH,
   MOBILE_IMAGE_PATH,
   SPOTIFY_PLAYLISTS,
-  FORMSPREE_URL
+  FORMSPREE_URL,
 } from "./constants";
 
 export const getFadeDuration = () => (isMobile ? 0 : fadeDuration);
 
-export const getBackground = async backgroundUrl => {
+export const getBackground = async (backgroundUrl) => {
   const response = await fetch(backgroundUrl);
   const image = await response.blob();
   return URL.createObjectURL(image);
@@ -26,9 +26,9 @@ export const getBackgroundUrls = () =>
   isBrowser
     ? shuffle(BACKGROUNDS)
         .slice(0, NUMBER_OF_IMAGES)
-        .map(background => `${DESKTOP_IMAGE_PATH}${background}.jpg`)
+        .map((background) => `${DESKTOP_IMAGE_PATH}${background}.jpg`)
     : shuffle(MOBILE_BACKGROUNDS).map(
-        background => `${MOBILE_IMAGE_PATH}${background}.jpg`
+        (background) => `${MOBILE_IMAGE_PATH}${background}.jpg`
       );
 
 export const validEmailRegex = RegExp(
@@ -40,4 +40,15 @@ export const getFormspreeUrl = () => {
   const token = shuffle(tokens.split(","))[0];
 
   return `${FORMSPREE_URL}/${token}`;
+};
+
+export const getAge = (dateString) => {
+  var today = new Date();
+  var birthDate = new Date(dateString);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
 };

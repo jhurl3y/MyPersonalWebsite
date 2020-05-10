@@ -2,7 +2,7 @@ export const aboutStrings = {
   about: "About",
   me: "Me:",
   intro:
-    "Hi, I'm James! 😃 Thanks for visiting my site. I'm a 25 year old fullstack software engineer living in Dublin, Ireland. I grew up in the lovely city of Galway in the west and lived there most of my life. You can read a little bit more about me below, and scroll through the pictures above.",
+    "Hi, I'm James! 😃 Thanks for visiting my site. I'm a {age} year old fullstack software engineer living in Dublin, Ireland. I grew up in the lovely city of Galway in the west and lived there most of my life. You can read a little bit more about me below, and scroll through the pictures above.",
   iLike: "What I like:",
   code:
     "Really passionate about all things tech. Love clean code, simple designs and playing with new tech.",
@@ -12,7 +12,7 @@ export const aboutStrings = {
     "Travelling is a big passion of mine. I have seen a lot of Europe, America, and been to Dubai + Cape Town.",
   friends:
     "Love socialising and having the craic over a few pints, and especially meeting new people.",
-  music: "Tunes/Likes"
+  music: "Tunes/Likes",
 };
 
 export const experienceStrings = {
@@ -37,7 +37,7 @@ export const experienceStrings = {
   yeatsDate: "2010 - 2012",
   yeatsTitle: "Leaving Certificate, Yeats College",
   yeatsLocation: "Galway, Ireland",
-  yeatsTasks: "Achieved maximum score of 625 points"
+  yeatsTasks: "Achieved maximum score of 625 points",
 };
 
 export const skillStrings = {
@@ -55,7 +55,7 @@ export const skillStrings = {
   sql: "<li>Relational Databases</li><li>Queries</li><li>MySQL</li>",
   systemDesign: "Have designed/built systems from the ground up",
   testing:
-    "<li>Unit Tests</li><li>Integration Tests</li><li>JS/Python/Ruby</li>"
+    "<li>Unit Tests</li><li>Integration Tests</li><li>JS/Python/Ruby</li>",
 };
 
 export const contactStrings = {
@@ -73,12 +73,12 @@ export const contactStrings = {
   question: "Question?",
   send: "Submit",
   showDetails: "Show Contact Details",
-  thanks: "Thanks! I will get back to you shortly."
+  thanks: "Thanks! I will get back to you shortly.",
 };
 
 export const footerStrings = {
-  copyright: "© James Hurley 2020",
-  rights: "All Rights Reserved"
+  copyright: "© James Hurley {year}",
+  rights: "All Rights Reserved",
 };
 
 export const metaStrings = {
@@ -90,5 +90,5 @@ export const metaStrings = {
     "Check out my personal website built with React and NextJS. Learn a bit about me, see what I'm interested in and reach out if you want to connect.",
   twitterSite: "@hurley_19",
   url: "https://jameshurley.ie",
-  cookies: "I use google analytics to enhance this site."
+  cookies: "I use google analytics to enhance this site.",
 };

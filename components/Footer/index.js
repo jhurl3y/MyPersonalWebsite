@@ -33,7 +33,10 @@ export default () => {
         </div>
         <div className={classes.disclaimer}>
           <Typography component="subtitle1" align="center">
-            {footerStrings.copyright}
+            {footerStrings.copyright.replace(
+              "{year}",
+              new Date().getFullYear()
+            )}
           </Typography>
           <Typography component="subtitle1" align="center">
             {footerStrings.rights}
