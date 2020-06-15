@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
-    "nodemon": "^1.19.4",
+    "nodemon": "^2.0.4",
     "postcss": "^7.0.26",
     "prettier": "1.18.2",
     "serverless-dotenv-plugin": "^2.1.1",
