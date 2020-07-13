@@ -57,7 +57,7 @@
     "typed.js": "^2.0.11"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.8.5",
     "nodemon": "^2.0.4",
     "postcss": "^7.0.26",
     "prettier": "2.0.5",
