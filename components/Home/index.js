@@ -9,7 +9,7 @@ import {
   PAGES,
   LEFT_KEY,
   RIGHT_KEY,
-  FIRST_IMAGE_PATH
+  FIRST_IMAGE_PATH,
 } from "../../utils/constants";
 import { getBackground, getBackgroundUrls } from "../../utils/helpers";
 import Styles from "./styles";
@@ -77,7 +77,7 @@ export default () => {
     setTranslateValue(index * -1 * slideWidth());
   };
 
-  const onDotClick = index => {
+  const onDotClick = (index) => {
     setIndex(index);
     setSouldTransition(true);
     setTranslateValue(index * -1 * slideWidth());
@@ -99,13 +99,13 @@ export default () => {
 
     // Split the backgrounds into chunks
     const chunkedBackgroundUrls = chunk(backgroundUrls, 3);
-    chunkedBackgroundUrls.map(chunkOfBackgroundUrls => {
+    chunkedBackgroundUrls.map((chunkOfBackgroundUrls) => {
       // Fetch all backgrounds in a chunk at once
-      Promise.all(chunkOfBackgroundUrls.map(url => getBackground(url))).then(
-        fetchedBackgrounds => {
-          setBackgrounds(backgrounds => [
+      Promise.all(chunkOfBackgroundUrls.map((url) => getBackground(url))).then(
+        (fetchedBackgrounds) => {
+          setBackgrounds((backgrounds) => [
             ...backgrounds,
-            ...fetchedBackgrounds
+            ...fetchedBackgrounds,
           ]);
         }
       );
