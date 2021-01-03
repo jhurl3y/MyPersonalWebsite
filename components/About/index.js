@@ -93,6 +93,11 @@ export default () => {
           </Grid>
         </Grid>
       </Container>
+      <Fade duration={getFadeDuration()} left>
+        <Typography variant="h2" align="center" className={classes.subHeading}>
+          {aboutStrings.garmin}
+        </Typography>
+      </Fade>
       <Container>
         <GarminWidget />
       </Container>

@@ -13,6 +13,7 @@ export const aboutStrings = {
   friends:
     "Love socialising and having the craic over a few pints, and especially meeting new people.",
   music: "Tunes/Likes",
+  garmin: "Latest Garmin Stats",
 };
 
 export const experienceStrings = {
