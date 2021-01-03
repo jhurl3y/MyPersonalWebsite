@@ -29,7 +29,7 @@ export const BACKGROUNDS = [
   "twelve",
   "thirteen",
   "fourteen",
-  "fifteen"
+  "fifteen",
 ];
 
 export const MOBILE_BACKGROUNDS = [
@@ -38,7 +38,7 @@ export const MOBILE_BACKGROUNDS = [
   "three",
   "four",
   "five",
-  "six"
+  "six",
 ];
 
 export const FIRST_IMAGE_PATH = "/static/assets/images/first_image.jpg";
@@ -61,13 +61,13 @@ export const LOCATIONS = [
   {
     name: "galway",
     lat: 53.27,
-    long: -9.057
+    long: -9.057,
   },
   {
     name: "dublin",
     lat: 53.35,
-    long: -6.26
-  }
+    long: -6.26,
+  },
 ];
 
 export const EMAIL = "jhurley070@gmail.com";
@@ -80,79 +80,79 @@ export const MAP_STYLES = [
     elementType: "labels.text.fill",
     stylers: [
       {
-        color: "#444444"
-      }
-    ]
+        color: "#444444",
+      },
+    ],
   },
   {
     featureType: "landscape",
     elementType: "all",
     stylers: [
       {
-        color: "#f2f2f2"
-      }
-    ]
+        color: "#f2f2f2",
+      },
+    ],
   },
   {
     featureType: "poi",
     elementType: "all",
     stylers: [
       {
-        visibility: "off"
-      }
-    ]
+        visibility: "off",
+      },
+    ],
   },
   {
     featureType: "road",
     elementType: "all",
     stylers: [
       {
-        saturation: -100
+        saturation: -100,
       },
       {
-        lightness: 45
-      }
-    ]
+        lightness: 45,
+      },
+    ],
   },
   {
     featureType: "road.highway",
     elementType: "all",
     stylers: [
       {
-        visibility: "simplified"
-      }
-    ]
+        visibility: "simplified",
+      },
+    ],
   },
   {
     featureType: "road.arterial",
     elementType: "labels.icon",
     stylers: [
       {
-        visibility: "off"
-      }
-    ]
+        visibility: "off",
+      },
+    ],
   },
   {
     featureType: "transit",
     elementType: "all",
     stylers: [
       {
-        visibility: "off"
-      }
-    ]
+        visibility: "off",
+      },
+    ],
   },
   {
     featureType: "water",
     elementType: "all",
     stylers: [
       {
-        color: "#46bcec"
+        color: "#46bcec",
       },
       {
-        visibility: "on"
-      }
-    ]
-  }
+        visibility: "on",
+      },
+    ],
+  },
 ];
 
 export const SKILLS = [
@@ -160,74 +160,74 @@ export const SKILLS = [
     name: "web_development",
     title: "Web Development",
     content: skillStrings.webDevelopment,
-    icon: WebDev
+    icon: WebDev,
   },
   {
     name: "python",
     title: "Python",
     content: skillStrings.python,
-    icon: Python
+    icon: Python,
   },
   {
     name: "javascript",
     title: "Javascript",
     content: skillStrings.javascript,
-    icon: Javascript
+    icon: Javascript,
   },
   {
     name: "ruby",
     title: "Ruby",
     content: skillStrings.ruby,
-    icon: Ruby
+    icon: Ruby,
   },
   {
     name: "java",
     title: "Java",
     content: skillStrings.java,
-    icon: Java
+    icon: Java,
   },
   {
     name: "git",
     title: "Git",
     content: skillStrings.git,
-    icon: Git
+    icon: Git,
   },
   {
     name: "mobile_development",
     title: "Mobile Development",
     content: skillStrings.mobile,
-    icon: Mobile
+    icon: Mobile,
   },
   {
     name: "algorithms",
     title: "Algorithms & Data Structures",
     content: skillStrings.algorihtms,
-    icon: Algorithms
+    icon: Algorithms,
   },
   {
     name: "a_b_testing",
     title: "A/B Testing",
     content: skillStrings.abTesting,
-    icon: ABTesting
+    icon: ABTesting,
   },
   {
     name: "sql",
     title: "SQL",
     content: skillStrings.sql,
-    icon: SQL
+    icon: SQL,
   },
   {
     name: "system_design",
     title: "System Design",
     content: skillStrings.systemDesign,
-    icon: SystemDesign
+    icon: SystemDesign,
   },
   {
     name: "testing",
     title: "Testing",
     content: skillStrings.testing,
-    icon: Testing
-  }
+    icon: Testing,
+  },
 ];
 
 export const experience = [
@@ -238,7 +238,7 @@ export const experience = [
     title: experienceStrings.surveymonkeyTitle,
     location: experienceStrings.surveymonkeyLocation,
     tasks: experienceStrings.surveymonkeyTasks,
-    skills: experienceStrings.surveymonkeySkills
+    skills: experienceStrings.surveymonkeySkills,
   },
   {
     color: "#daad58",
@@ -247,7 +247,7 @@ export const experience = [
     title: experienceStrings.exordoTitle,
     location: experienceStrings.exordoLocation,
     tasks: experienceStrings.exordoTasks,
-    skills: experienceStrings.exordoSkills
+    skills: experienceStrings.exordoSkills,
   },
   {
     color: "#a34a88",
@@ -255,7 +255,7 @@ export const experience = [
     date: experienceStrings.nuigDate,
     title: experienceStrings.nuigTitle,
     location: experienceStrings.nuigLocation,
-    tasks: experienceStrings.nuigTasks
+    tasks: experienceStrings.nuigTasks,
   },
   {
     color: "#253B80",
@@ -263,8 +263,8 @@ export const experience = [
     date: experienceStrings.yeatsDate,
     title: experienceStrings.yeatsTitle,
     location: experienceStrings.yeatsLocation,
-    tasks: experienceStrings.yeatsTasks
-  }
+    tasks: experienceStrings.yeatsTasks,
+  },
 ];
 
 export const fadeDuration = 500;
@@ -272,7 +272,7 @@ export const fadeDuration = 500;
 export const SPOTIFY_PLAYLISTS = [
   "https://open.spotify.com/embed/playlist/37i9dQZF1EpAh9wBJPJbF3",
   "https://open.spotify.com/embed/playlist/37i9dQZF1EtkB4R6IdSwy2",
-  "https://open.spotify.com/embed/playlist/37i9dQZEVXcCRutUm5lf69"
+  "https://open.spotify.com/embed/playlist/37i9dQZEVXcCRutUm5lf69",
 ];
 
 export const WIDGET_HEIGHT = 450;
@@ -290,7 +290,11 @@ export const COLORS = {
   darkBlue: "#556cd6",
   darkGrey: "#888888",
   lightBlue: "#2194f3",
-  mediumGrey: "#a5a5a5"
+  mediumGrey: "#a5a5a5",
 };
 
 export const FORMSPREE_URL = "https://formspree.io";
+
+export const GARMIN_API_DEV = "https://api.dev.jameshurley.ie";
+
+export const GARMIN_API_PROD = "https://api.jameshurley.ie";

@@ -10,6 +10,7 @@ import {
   MOBILE_IMAGE_PATH,
   SPOTIFY_PLAYLISTS,
   FORMSPREE_URL,
+  GARMIN_API_DEV,
 } from "./constants";
 
 export const getFadeDuration = () => (isMobile ? 0 : fadeDuration);
@@ -51,4 +52,9 @@ export const getAge = (dateString) => {
     age--;
   }
   return age;
+};
+
+export const fetchGarmin = async (path) => {
+  const response = await fetch(`${GARMIN_API_DEV}/${path}`);
+  return await response.json();
 };

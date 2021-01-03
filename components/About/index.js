@@ -9,6 +9,7 @@ import { aboutStrings } from "../../utils/strings";
 import Styles from "./styles";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { WIDGET_HEIGHT } from "../../utils/constants";
+import GarminWidget from "./garminWidget";
 
 const SpotifyWidget = () => (
   <iframe
@@ -26,7 +27,7 @@ const TwitterWidget = () => (
     sourceType="likes"
     screenName="hurley_19"
     options={{
-      height: WIDGET_HEIGHT
+      height: WIDGET_HEIGHT,
     }}
     theme="dark"
     noBorders
@@ -91,6 +92,9 @@ export default () => {
             </Fade>
           </Grid>
         </Grid>
+      </Container>
+      <Container>
+        <GarminWidget />
       </Container>
     </Container>
   );
