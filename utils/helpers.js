@@ -58,3 +58,14 @@ export const fetchGarmin = async (path) => {
   const response = await fetch(`${GARMIN_API_DEV}/${path}`);
   return await response.json();
 };
+
+export const filterObject = (data, allowList) => {
+  return Object.keys(data)
+    .filter((key) => allowList.includes(key))
+    .reduce((obj, key) => {
+      return {
+        ...obj,
+        [key]: data[key],
+      };
+    }, {});
+};

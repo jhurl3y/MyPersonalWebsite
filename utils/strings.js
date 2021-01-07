@@ -13,7 +13,19 @@ export const aboutStrings = {
   friends:
     "Love socialising and having the craic over a few pints, and especially meeting new people.",
   music: "Tunes/Likes",
-  garmin: "Latest Garmin Stats",
+  garmin: "Latest Garmin Data",
+  totalKilocalories: "Total Calories",
+  totalSteps: "Total Steps",
+  totalDistanceMeters: "Total Distance (m)",
+  highlyActiveSeconds: "Highly Active Seconds",
+  activeSeconds: "Active Seconds",
+  sedentarySeconds: "Sedentary Seconds",
+  floorsAscended: "Floors Ascended",
+  floorsDescended: "Floors Descended",
+  minHeartRate: "Min Heart Rate",
+  maxHeartRate: "Max Heart Rate",
+  restingHeartRate: "Resting Heart Rate",
+  lastSevenDaysAvgRestingHeartRate: "Avg Resting Heart Rate (7 days)",
 };
 
 export const experienceStrings = {
