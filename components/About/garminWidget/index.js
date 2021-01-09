@@ -3,14 +3,12 @@ import Styles from "./styles";
 import Grid from "@material-ui/core/Grid";
 import { fetchGarmin, filterObject } from "../../../utils/helpers";
 import SummaryTable from "./summaryTable";
+import SummaryPie from "./summaryPie";
 
 const allowedSummaryStats = [
   "totalKilocalories",
   "totalSteps",
   "totalDistanceMeters",
-  "highlyActiveSeconds",
-  "activeSeconds",
-  "sedentarySeconds",
   "floorsAscended",
   "floorsDescended",
   "minHeartRate",
@@ -23,7 +21,6 @@ export default () => {
   const classes = Styles();
   const [garminData, setGarminData] = useState({
     summary: null,
-    summaryDate: null,
     last_activity: null,
   });
 
@@ -32,8 +29,7 @@ export default () => {
       setGarminData((prev) => {
         return {
           ...prev,
-          summary: filterObject(data, allowedSummaryStats),
-          summaryDate: data.calendarDate,
+          summary: data,
         };
       });
     });
@@ -52,8 +48,18 @@ export default () => {
       <Grid item xs={12} sm={12} md={6}>
         {garminData.summary && (
           <SummaryTable
-            stats={garminData.summary}
-            date={garminData.summaryDate}
+            stats={filterObject(garminData.summary, allowedSummaryStats)}
+            date={garminData.summary.calendarDate}
+          />
+        )}
+      </Grid>
+      <Grid item xs={12} sm={12} md={6}>
+        {garminData.summary && (
+          <SummaryPie
+            highlyActiveSeconds={garminData.summary.highlyActiveSeconds}
+            activeSeconds={garminData.summary.activeSeconds}
+            sedentarySeconds={garminData.summary.sedentarySeconds}
+            date={garminData.summary.calendarDate}
           />
         )}
       </Grid>

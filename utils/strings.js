@@ -17,15 +17,16 @@ export const aboutStrings = {
   totalKilocalories: "Total Calories",
   totalSteps: "Total Steps",
   totalDistanceMeters: "Total Distance (m)",
-  highlyActiveSeconds: "Highly Active Seconds",
-  activeSeconds: "Active Seconds",
-  sedentarySeconds: "Sedentary Seconds",
+  highlyActiveSeconds: "Highly Active",
+  activeSeconds: "Active",
+  sedentarySeconds: "Sedentary",
   floorsAscended: "Floors Ascended",
   floorsDescended: "Floors Descended",
   minHeartRate: "Min Heart Rate",
   maxHeartRate: "Max Heart Rate",
   restingHeartRate: "Resting Heart Rate",
   lastSevenDaysAvgRestingHeartRate: "Avg Resting Heart Rate (7 days)",
+  activeLevels: "Activity Levels",
 };
 
 export const experienceStrings = {

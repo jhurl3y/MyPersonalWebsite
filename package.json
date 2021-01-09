@@ -20,7 +20,6 @@
     "not ie <= 8"
   ],
   "dependencies": {
-    "autoprefixer": "^9.7.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
@@ -28,6 +27,7 @@
     "@material-ui/icons": "^4.5.1",
     "@svgr/webpack": "^5.4.0",
     "@zeit/next-css": "^1.0.1",
+    "autoprefixer": "^9.7.4",
     "classnames": "^2.2.6",
     "compression": "^1.7.4",
     "cssnano": "^4.1.10",
@@ -45,6 +45,7 @@
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.12.0",
     "react-google-maps": "^9.4.5",
+    "react-minimal-pie-chart": "^8.1.0",
     "react-reveal": "^1.2.2",
     "react-twitter-embed": "^3.0.3",
     "react-typed": "^1.2.0",
