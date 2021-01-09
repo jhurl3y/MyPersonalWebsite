@@ -59,6 +59,7 @@ export default () => {
             highlyActiveSeconds={garminData.summary.highlyActiveSeconds}
             activeSeconds={garminData.summary.activeSeconds}
             sedentarySeconds={garminData.summary.sedentarySeconds}
+            sleepingSeconds={garminData.summary.sleepingSeconds}
             date={garminData.summary.calendarDate}
           />
         )}

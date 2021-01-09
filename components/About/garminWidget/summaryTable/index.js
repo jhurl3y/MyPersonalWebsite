@@ -37,7 +37,7 @@ export default ({ stats, date }) => {
           <FontAwesomeIcon icon={keyToIcon[key]} size="1x" />{" "}
           {aboutStrings[key]}
         </TableCell>
-        <TableCell>{stats[key].toLocaleString()}</TableCell>
+        <TableCell>{Math.floor(stats[key]).toLocaleString()}</TableCell>
       </TableRow>
     );
   });

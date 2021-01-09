@@ -7,6 +7,7 @@ export default ({
   highlyActiveSeconds,
   activeSeconds,
   sedentarySeconds,
+  sleepingSeconds,
   date,
 }) => {
   const [hovered, setHovered] = useState(null);
@@ -26,7 +27,12 @@ export default ({
       value: sedentarySeconds,
       color: "#29941f",
     },
-  ];
+    {
+      title: aboutStrings.sleepingSeconds,
+      value: sleepingSeconds,
+      color: "#5c81fa",
+    },
+  ].filter(({ value }) => value > 0);
 
   return (
     <React.Fragment>

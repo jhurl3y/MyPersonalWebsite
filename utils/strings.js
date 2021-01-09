@@ -20,6 +20,7 @@ export const aboutStrings = {
   highlyActiveSeconds: "Highly Active",
   activeSeconds: "Active",
   sedentarySeconds: "Sedentary",
+  sleepingSeconds: "Sleep",
   floorsAscended: "Floors Ascended",
   floorsDescended: "Floors Descended",
   minHeartRate: "Min Heart Rate",
