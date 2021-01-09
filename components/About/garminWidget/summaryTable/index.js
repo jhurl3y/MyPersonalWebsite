@@ -7,13 +7,34 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { aboutStrings } from "../../../../utils/strings";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBatteryFull,
+  faPaw,
+  faChartArea,
+  faHeart,
+  faHeartbeat,
+  faArrowUp,
+  faArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
 
+const keyToIcon = {
+  totalKilocalories: faBatteryFull,
+  totalSteps: faPaw,
+  totalDistanceMeters: faChartArea,
+  floorsAscended: faArrowUp,
+  floorsDescended: faArrowDown,
+  minHeartRate: faHeart,
+  maxHeartRate: faHeart,
+  restingHeartRate: faHeart,
+  lastSevenDaysAvgRestingHeartRate: faHeartbeat,
+};
 export default ({ stats, date }) => {
-  const statsList = Object.keys(stats)
-  .map((key) => {
+  const statsList = Object.keys(stats).map((key) => {
     return (
       <TableRow key={key}>
         <TableCell component="th" scope="row">
+          <FontAwesomeIcon icon={keyToIcon[key]} size="1x" />{" "}
           {aboutStrings[key]}
         </TableCell>
         <TableCell>{stats[key].toLocaleString()}</TableCell>
