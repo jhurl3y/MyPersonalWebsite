@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { fetchGarmin, filterObject } from "../../../utils/helpers";
 import SummaryTable from "./summaryTable";
 import SummaryPie from "./summaryPie";
+import ActivityCard from "./activityCard";
 
 const allowedSummaryStats = [
   "totalKilocalories",
@@ -15,6 +16,24 @@ const allowedSummaryStats = [
   "maxHeartRate",
   "restingHeartRate",
   "lastSevenDaysAvgRestingHeartRate",
+];
+
+const allowedActivityStats = [
+  "activityName",
+  "startTimeGMT",
+  "distance",
+  "duration",
+  "averageSpeed",
+  "maxSpeed",
+  "startLatitude",
+  "startLongitude",
+  "calories",
+  "averageHR",
+  "maxHR",
+  "steps",
+  "avgStrideLength",
+  "minElevation",
+  "maxElevation",
 ];
 
 export default () => {
@@ -64,6 +83,16 @@ export default () => {
             sedentarySeconds={garminData.summary.sedentarySeconds}
             sleepingSeconds={garminData.summary.sleepingSeconds}
             date={garminData.summary.calendarDate}
+          />
+        )}
+      </Grid>
+      <Grid item xs={12} sm={12} md={6}>
+        {garminData.last_activity && (
+          <ActivityCard
+            summary={filterObject(
+              garminData.last_activity.summary,
+              allowedActivityStats
+            )}
           />
         )}
       </Grid>
