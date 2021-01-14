@@ -13,18 +13,18 @@ import { metaStrings } from "../utils/strings";
 import CookieConsent from "react-cookie-consent";
 import "../src/styles.css";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     height: "100%",
-    backgroundColor: theme.colors.black
-  }
+    backgroundColor: theme.colors.black,
+  },
 }));
 
 const Section = forwardRef(({ children, id, offset }, ref) => {
   let styles = offset
     ? {
         marginTop: `-${offset}px`,
-        paddingTop: `${offset}px`
+        paddingTop: `${offset}px`,
       }
     : {};
 

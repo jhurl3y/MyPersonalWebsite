@@ -29,6 +29,7 @@ const keyToIcon = {
   restingHeartRate: faHeart,
   lastSevenDaysAvgRestingHeartRate: faHeartbeat,
 };
+
 export default ({ stats, date }) => {
   const statsList = Object.keys(stats).map((key) => {
     return (

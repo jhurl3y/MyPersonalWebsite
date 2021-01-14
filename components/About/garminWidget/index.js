@@ -21,7 +21,6 @@ export default () => {
   const classes = Styles();
   const [garminData, setGarminData] = useState({
     summary: null,
-    last_activity: null,
   });
 
   if (garminData.summary == null) {
@@ -31,14 +30,6 @@ export default () => {
           ...prev,
           summary: data,
         };
-      });
-    });
-  }
-
-  if (garminData.last_activity == null) {
-    fetchGarmin("last_activity").then((data) => {
-      setGarminData((prev) => {
-        return { ...prev, last_activity: data };
       });
     });
   }

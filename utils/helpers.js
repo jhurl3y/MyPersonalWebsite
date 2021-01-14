@@ -11,6 +11,7 @@ import {
   SPOTIFY_PLAYLISTS,
   FORMSPREE_URL,
   GARMIN_API_DEV,
+  GARMIN_API_PROD,
 } from "./constants";
 
 export const getFadeDuration = () => (isMobile ? 0 : fadeDuration);
@@ -57,7 +58,11 @@ export const getAge = (dateString) => {
 };
 
 export const fetchGarmin = async (path) => {
-  const response = await fetch(`${GARMIN_API_DEV}/${path}`);
+  const response = await fetch(
+    process.env.NODE_ENV !== "production"
+      ? `${GARMIN_API_DEV}/${path}`
+      : `${GARMIN_API_PROD}/${path}`
+  );
   return await response.json();
 };
 
