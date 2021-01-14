@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { PieChart } from "react-minimal-pie-chart";
 import Typography from "@material-ui/core/Typography";
 import { aboutStrings } from "../../../../utils/strings";
+import { COLORS } from "../../../../utils/constants";
 
 export default ({
   highlyActiveSeconds,
@@ -15,22 +16,22 @@ export default ({
     {
       title: aboutStrings.highlyActiveSeconds,
       value: highlyActiveSeconds,
-      color: "#d92e3c",
+      color: COLORS.red,
     },
     {
       title: aboutStrings.activeSeconds,
       value: activeSeconds,
-      color: "#eb9a0e",
+      color: COLORS.orange,
     },
     {
       title: aboutStrings.sedentarySeconds,
       value: sedentarySeconds,
-      color: "#29941f",
+      color: COLORS.green,
     },
     {
       title: aboutStrings.sleepingSeconds,
       value: sleepingSeconds,
-      color: "#5c81fa",
+      color: COLORS.blue,
     },
   ].filter(({ value }) => value > 0);
 

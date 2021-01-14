@@ -291,6 +291,9 @@ export const COLORS = {
   darkGrey: "#888888",
   lightBlue: "#2194f3",
   mediumGrey: "#a5a5a5",
+  red: "#d92e3c",
+  orange: "#eb9a0e",
+  green: "#29941f",
 };
 
 export const FORMSPREE_URL = "https://formspree.io";

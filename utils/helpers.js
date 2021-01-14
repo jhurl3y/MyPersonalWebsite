@@ -57,12 +57,14 @@ export const getAge = (dateString) => {
   return age;
 };
 
-export const fetchGarmin = async (path) => {
-  const response = await fetch(
+export const fetchGarmin = async (path, params = {}) => {
+  const url = new URL(
     process.env.NODE_ENV !== "production"
       ? `${GARMIN_API_DEV}/${path}`
       : `${GARMIN_API_PROD}/${path}`
   );
+  url.search = new URLSearchParams(params).toString();
+  const response = await fetch(url);
   return await response.json();
 };
 
