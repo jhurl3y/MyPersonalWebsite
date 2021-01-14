@@ -41,6 +41,7 @@ export default () => {
   const [garminData, setGarminData] = useState({
     summary: null,
     last_activity: null,
+    last_device_used: null,
   });
 
   if (garminData.summary == null) {
@@ -60,6 +61,17 @@ export default () => {
         return {
           ...prev,
           last_activity: data,
+        };
+      });
+    });
+  }
+
+  if (garminData.last_device_used == null) {
+    fetchGarmin("last_device_used").then((data) => {
+      setGarminData((prev) => {
+        return {
+          ...prev,
+          last_device_used: data,
         };
       });
     });
@@ -87,12 +99,13 @@ export default () => {
         )}
       </Grid>
       <Grid item xs={12} sm={12} md={6}>
-        {garminData.last_activity && (
+        {garminData.last_activity && garminData.last_device_used && (
           <ActivityCard
             summary={filterObject(
               garminData.last_activity.summary,
               allowedActivityStats
             )}
+            last_device_used={garminData.last_device_used}
           />
         )}
       </Grid>

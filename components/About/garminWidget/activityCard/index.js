@@ -21,6 +21,7 @@ export default ({
     minElevation,
     maxElevation,
   },
+  last_device_used: { lastUsedDeviceName, imageUrl },
 }) => {
   const classes = Styles();
 
@@ -129,6 +130,13 @@ export default ({
             </Typography>
           </Grid>
         </Grid>
+        <div className={classes.garminImage}>
+          <img src={imageUrl} width={200} height={200} alt="garmin" />
+          <Typography
+            color="textSecondary"
+            className={classes.garminText}
+          >{`Recorded on ${lastUsedDeviceName}`}</Typography>
+        </div>
       </CardContent>
     </Card>
   );
