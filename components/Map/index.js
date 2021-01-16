@@ -1,13 +1,15 @@
 import { compose, withProps } from "recompose";
-import { GoogleMap, withGoogleMap } from "react-google-maps";
+import { GoogleMap, withGoogleMap, Polyline } from "react-google-maps";
 import Styles from "./styles";
 
 export default ({
-  children,
   location: { lng, lat },
   zoom,
-  mapStyles,
+  mapStyles = {},
   title,
+  showPolyline = false,
+  polylineData = [],
+  polylineOptions = {},
 }) => {
   const classes = Styles();
   const options = {
@@ -35,12 +37,20 @@ export default ({
       center={options.center}
       zoom={options.zoom}
       defaultOptions={options.defaultOptions}
-    />
+    >
+      {showPolyline && (
+        <Polyline
+          path={polylineData}
+          geodesic={true}
+          options={polylineOptions}
+        />
+      )}
+    </GoogleMap>
   ));
 
   return (
     <div id={title} className={classes.map}>
-      <Map>{children}</Map>
+      <Map />
     </div>
   );
 };

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Styles from "./styles";
 import Grid from "@material-ui/core/Grid";
 import { fetchGarmin, filterObject } from "../../../utils/helpers";
 import SummaryTable from "./summaryTable";
 import SummaryPie from "./summaryPie";
 import ActivityCard from "./activityCard";
+import ActivityChart from "./activityChart";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Map from "../../Map";
 
 const allowedSummaryStats = [
   "totalKilocalories",
@@ -36,11 +40,30 @@ const allowedActivityStats = [
   "maxElevation",
 ];
 
+const parseChartData = (details) => {
+  let heartRates = [];
+  let speed = [];
+  let pathCoordinates = [];
+
+  details.forEach((detail, i) => {
+    heartRates[i] = [i, detail.metrics[6]];
+    speed[i] = [i, 1000.0 / detail.metrics[8] / 60.0];
+    pathCoordinates[i] = { lat: detail.metrics[14], lng: detail.metrics[12] };
+  });
+
+  return {
+    heartRates,
+    speed,
+    pathCoordinates,
+  };
+};
+
 export default () => {
   const classes = Styles();
   const [garminData, setGarminData] = useState({
     summary: null,
-    last_activity: null,
+    last_activity_summary: null,
+    last_activity_details: null,
     last_device_used: null,
   });
 
@@ -55,12 +78,13 @@ export default () => {
     });
   }
 
-  if (garminData.last_activity == null) {
+  if (garminData.last_activity_summary == null) {
     fetchGarmin("last_activity", { include_details: true }).then((data) => {
       setGarminData((prev) => {
         return {
           ...prev,
-          last_activity: data,
+          last_activity_summary: data.summary,
+          last_activity_details: data.details,
         };
       });
     });
@@ -76,6 +100,12 @@ export default () => {
       });
     });
   }
+
+  const chartData = useMemo(() => {
+    return garminData.last_activity_details
+      ? parseChartData(garminData.last_activity_details.activityDetailMetrics)
+      : null;
+  }, [garminData.last_activity_details]);
 
   return (
     <Grid container spacing={6} className={classes.garmin}>
@@ -99,14 +129,46 @@ export default () => {
         )}
       </Grid>
       <Grid item xs={12} sm={12} md={6}>
-        {garminData.last_activity && garminData.last_device_used && (
+        {garminData.last_activity_summary && garminData.last_device_used && (
           <ActivityCard
             summary={filterObject(
-              garminData.last_activity.summary,
+              garminData.last_activity_summary,
               allowedActivityStats
             )}
             last_device_used={garminData.last_device_used}
           />
+        )}
+      </Grid>
+      <Grid item xs={12} sm={12} md={6}>
+        {chartData && (
+          <Card>
+            <CardContent>
+              <ActivityChart label="Heart Rates" data={chartData.heartRates} />
+              <ActivityChart label="Speed" data={chartData.speed} />
+            </CardContent>
+          </Card>
+        )}
+      </Grid>
+      <Grid item xs={12} sm={12} md={6}>
+        {chartData && (
+          <div className={classes.map}>
+            <Map
+              location={
+                chartData.pathCoordinates[
+                  Math.round((chartData.pathCoordinates.length - 1) / 4)
+                ]
+              }
+              zoom={13}
+              title="activity-map"
+              showPolyline
+              polylineData={chartData.pathCoordinates}
+              polylineOptions={{
+                strokeColor: "#ff2527",
+                strokeOpacity: 0.75,
+                strokeWeight: 2,
+              }}
+            />
+          </div>
         )}
       </Grid>
     </Grid>

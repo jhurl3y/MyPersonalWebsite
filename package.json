@@ -60,8 +60,10 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4",
+    "performance-now": "^2.1.0",
     "postcss": "^7.0.26",
     "prettier": "2.0.5",
+    "react-charts": "^2.0.0-beta.7",
     "serverless-dotenv-plugin": "^2.4.2",
     "serverless-offline": "^5.12.1"
   }
