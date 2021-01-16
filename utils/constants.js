@@ -61,12 +61,12 @@ export const LOCATIONS = [
   {
     name: "galway",
     lat: 53.27,
-    long: -9.057,
+    lng: -9.057,
   },
   {
     name: "dublin",
     lat: 53.35,
-    long: -6.26,
+    lng: -6.26,
   },
 ];
 

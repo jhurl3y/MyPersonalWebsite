@@ -1,29 +1,33 @@
 import { compose, withProps } from "recompose";
 import { GoogleMap, withGoogleMap } from "react-google-maps";
-import { MAP_ZOOM, MAP_STYLES } from "../../../utils/constants";
-import { contactStrings } from "../../../utils/strings";
 import Styles from "./styles";
 
-export default ({ children, location }) => {
+export default ({
+  children,
+  location: { lng, lat },
+  zoom,
+  mapStyles,
+  title,
+}) => {
   const classes = Styles();
   const options = {
     center: {
-      lng: location.long,
-      lat: location.lat
+      lng,
+      lat,
     },
-    zoom: MAP_ZOOM,
+    zoom: zoom,
     defaultOptions: {
       disableDefaultUI: true,
       disableDoubleClickZoom: true,
       scrollwheel: false,
-      styles: MAP_STYLES
-    }
+      styles: mapStyles,
+    },
   };
 
   const Map = compose(
     withProps({
       containerElement: <div className={classes.container} />,
-      mapElement: <div className={classes.mapEl} />
+      mapElement: <div className={classes.mapEl} />,
     }),
     withGoogleMap
   )(() => (
@@ -35,7 +39,7 @@ export default ({ children, location }) => {
   ));
 
   return (
-    <div id={contactStrings.map} className={classes.map}>
+    <div id={title} className={classes.map}>
       <Map>{children}</Map>
     </div>
   );

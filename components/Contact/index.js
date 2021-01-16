@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Fade from "react-reveal/Fade";
 import Styles from "./styles";
-import Map from "./map";
+import Map from "../Map";
 import { LOCATIONS } from "../../utils/constants";
 import Details from "./details";
 import Button from "@material-ui/core/Button";
@@ -11,13 +11,14 @@ import Form from "./form";
 import { getFadeDuration } from "../../utils/helpers";
 import { contactStrings } from "../../utils/strings";
 import { withStyles } from "@material-ui/core/styles";
+import { MAP_ZOOM, MAP_STYLES } from "../../utils/constants";
 
-const StyledButton = withStyles(theme => ({
+const StyledButton = withStyles((theme) => ({
   root: {
     color: "#46bcec",
     background: "transparent",
-    textTransform: "none"
-  }
+    textTransform: "none",
+  },
 }))(Button);
 
 export default () => {
@@ -35,11 +36,11 @@ export default () => {
   }, []);
 
   const handleGalway = () => {
-    setLocation(LOCATIONS.find(location => location.name === "galway"));
+    setLocation(LOCATIONS.find((location) => location.name === "galway"));
   };
 
   const handleDublin = () => {
-    setLocation(LOCATIONS.find(location => location.name === "dublin"));
+    setLocation(LOCATIONS.find((location) => location.name === "dublin"));
   };
 
   return (
@@ -91,7 +92,12 @@ export default () => {
           {showDetails && <Details />}
         </Container>
       </Fade>
-      <Map location={location} />
+      <Map
+        location={location}
+        zoom={MAP_ZOOM}
+        mapStyles={MAP_STYLES}
+        title="contact-map"
+      />
     </Container>
   );
 };
