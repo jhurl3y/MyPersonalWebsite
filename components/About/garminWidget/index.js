@@ -48,8 +48,8 @@ const parseChartData = (details) => {
   let pathCoordinates = [];
 
   details.forEach((detail, i) => {
-    heartRates[i] = [i, detail.metrics[6]];
-    speed[i] = [i, 1000.0 / detail.metrics[8] / 60.0];
+    heartRates[i] = [detail.metrics[1] / 60.0, detail.metrics[6]];
+    speed[i] = [detail.metrics[1] / 60.0, 1000.0 / detail.metrics[8] / 60.0];
     pathCoordinates[i] = { lat: detail.metrics[14], lng: detail.metrics[12] };
   });
 
@@ -190,10 +190,16 @@ export default () => {
             <Card>
               <CardContent>
                 <ActivityChart
-                  label="Heart Rates"
+                  label="Heart Rate ❤️"
+                  tooltipLabel="❤️"
                   data={chartData.heartRates}
                 />
-                <ActivityChart label="Speed" data={chartData.speed} />
+                <ActivityChart
+                  label="Speed 💨"
+                  tooltipLabel="💨"
+                  tooltipDecimal
+                  data={chartData.speed}
+                />
               </CardContent>
             </Card>
           )}
