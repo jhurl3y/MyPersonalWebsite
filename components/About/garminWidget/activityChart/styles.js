@@ -1,5 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-  chart: { width: "90%", height: 300, margin: "auto" },
+  chart: {
+    width: "105%",
+    height: 240,
+  },
 }));

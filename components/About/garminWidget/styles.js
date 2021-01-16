@@ -14,6 +14,12 @@ export default makeStyles((theme) => ({
     height: "57vh",
     width: "100%",
   },
+  charts: {
+    padding: theme.spacing(7, 2),
+  },
+  axisLabel: {
+    fontSize: "1.075rem",
+  },
   [theme.breakpoints.down("lg")]: {
     map: {
       height: "57vh",

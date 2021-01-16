@@ -2,7 +2,14 @@ import React from "react";
 import { Chart } from "react-charts";
 import Styles from "./styles";
 
-export default ({ data, label, tooltipLabel, tooltipDecimal }) => {
+export default ({
+  data,
+  label,
+  tooltipLabel,
+  tooltipDecimal,
+  showAxis = true,
+  backgroundColor = null,
+}) => {
   const classes = Styles();
 
   const axes = React.useMemo(
@@ -12,12 +19,17 @@ export default ({ data, label, tooltipLabel, tooltipDecimal }) => {
         type: "linear",
         position: "bottom",
         showGrid: false,
-        show: false,
+        show: showAxis,
+        format: (d) => `${d} mins`,
       },
       { type: "linear", position: "left", showGrid: false },
     ],
     []
   );
+
+  const getSeriesStyle = React.useCallback((series) => {
+    return backgroundColor ? { fill: backgroundColor } : {};
+  }, []);
 
   const series = React.useMemo(
     () => ({
@@ -75,6 +87,7 @@ export default ({ data, label, tooltipLabel, tooltipDecimal }) => {
         series={series}
         primaryCursor={primaryCursor}
         secondaryCursor={secondaryCursor}
+        getSeriesStyle={getSeriesStyle}
       />
     </div>
   );

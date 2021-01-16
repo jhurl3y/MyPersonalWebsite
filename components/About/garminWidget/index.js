@@ -11,6 +11,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Map from "../../Map";
 import { aboutStrings } from "../../../utils/strings";
+import { COLORS } from "../../../utils/constants";
 
 const allowedSummaryStats = [
   "totalKilocalories",
@@ -115,7 +116,7 @@ export default () => {
         <Typography
           variant="h3"
           align="center"
-          className={`${classes.subHeading} ${classes.spacing}`}
+          className={`${classes.subHeading} ${classes.spacingBottom}`}
         >
           {`${aboutStrings.garminSummary} - ${new Date(
             garminData.summary.calendarDate
@@ -187,19 +188,43 @@ export default () => {
         </Grid>
         <Grid item xs={12} sm={12} md={12}>
           {chartData && (
-            <Card>
+            <Card className={classes.charts}>
               <CardContent>
-                <ActivityChart
-                  label="Heart Rate ❤️"
-                  tooltipLabel="❤️"
-                  data={chartData.heartRates}
-                />
-                <ActivityChart
-                  label="Speed 💨"
-                  tooltipLabel="💨"
-                  tooltipDecimal
-                  data={chartData.speed}
-                />
+                <Grid container spacing={3}>
+                  <Grid item xs={2} align="center">
+                    <Typography
+                      className={classes.axisLabel}
+                      color="textSecondary"
+                    >
+                      Heart Rate <br /> (beats/min)
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={10} className={classes.spacingBottom}>
+                    <ActivityChart
+                      label="Heart Rate ❤️"
+                      tooltipLabel="❤️"
+                      data={chartData.heartRates}
+                      showAxis={false}
+                      backgroundColor={COLORS.red}
+                    />
+                  </Grid>
+                  <Grid item xs={2} align="center">
+                    <Typography
+                      className={classes.axisLabel}
+                      color="textSecondary"
+                    >
+                      Speed <br /> (mins/km)
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={10}>
+                    <ActivityChart
+                      label="Speed 💨"
+                      tooltipLabel="💨"
+                      tooltipDecimal
+                      data={chartData.speed}
+                    />
+                  </Grid>
+                </Grid>
               </CardContent>
             </Card>
           )}
