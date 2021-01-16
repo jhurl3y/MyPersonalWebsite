@@ -62,7 +62,7 @@ export default ({
               Average Speed:{" "}
             </Typography>
             <Typography variant="span">
-              {`${Math.floor(averageSpeed).toLocaleString()} m/s`}
+              {`${(1000.0 / averageSpeed / 60.0).toLocaleString()} mins/km`}
             </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={6}>
@@ -70,7 +70,7 @@ export default ({
               Max Speed:{" "}
             </Typography>
             <Typography variant="span">
-              {`${Math.floor(maxSpeed).toLocaleString()} m/s`}
+              {`${(1000.0 / maxSpeed / 60.0).toLocaleString()} mins/km`}
             </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={6}>
