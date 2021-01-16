@@ -74,7 +74,9 @@ export default ({
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
             <Typography variant="span" className={classes.rightPadding}>
-              {`${(1000.0 / averageSpeed / 60.0).toLocaleString()} mins/km`}
+              {`${(1000.0 / averageSpeed / 60.0)
+                .toFixed(2)
+                .toLocaleString()} mins/km`}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3}>
@@ -88,7 +90,9 @@ export default ({
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
             <Typography variant="span">
-              {`${(1000.0 / maxSpeed / 60.0).toLocaleString()} mins/km`}
+              {`${(1000.0 / maxSpeed / 60.0)
+                .toFixed(2)
+                .toLocaleString()} mins/km`}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3}>
