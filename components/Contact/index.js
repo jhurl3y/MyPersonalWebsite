@@ -53,7 +53,7 @@ export default () => {
           <p dangerouslySetInnerHTML={{ __html: contactStrings.intro }} />
           <p dangerouslySetInnerHTML={{ __html: contactStrings.questions }} />
           <StyledButton
-            href={`#${contactStrings.map}`}
+            href="#contact-map"
             className={classes.button}
             onClick={handleGalway}
             title={contactStrings.galway}
@@ -62,7 +62,7 @@ export default () => {
           </StyledButton>
           {contactStrings.or}
           <StyledButton
-            href={`#${contactStrings.map}`}
+            href="#contact-map"
             className={classes.button}
             onClick={handleDublin}
             title={contactStrings.dublin}
@@ -97,6 +97,7 @@ export default () => {
         zoom={MAP_ZOOM}
         mapStyles={MAP_STYLES}
         title="contact-map"
+        mapClasses={classes.map}
       />
     </Container>
   );

@@ -3,6 +3,7 @@ import { PieChart } from "react-minimal-pie-chart";
 import Typography from "@material-ui/core/Typography";
 import { aboutStrings } from "../../../../utils/strings";
 import { COLORS } from "../../../../utils/constants";
+import Styles from "./styles";
 
 export default ({
   highlyActiveSeconds,
@@ -11,6 +12,7 @@ export default ({
   sleepingSeconds,
   date,
 }) => {
+  const classes = Styles();
   const [hovered, setHovered] = useState(null);
   const data = [
     {
@@ -37,8 +39,8 @@ export default ({
 
   return (
     <React.Fragment>
-      <Typography variant="h6" align="center" style={{ marginBottom: -30 }}>
-        {`${aboutStrings.activeLevels} - ${new Date(date).toDateString()}`}
+      <Typography variant="h6" align="center" className={classes.title}>
+        {aboutStrings.activeLevels}
       </Typography>
       <PieChart
         data={data}
@@ -57,7 +59,7 @@ export default ({
         labelPosition={70}
         paddingAngle={18}
         lineWidth={20}
-        radius={40}
+        radius={30}
         animate
         rounded
       />

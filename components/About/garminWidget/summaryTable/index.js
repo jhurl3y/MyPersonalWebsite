@@ -46,14 +46,9 @@ export default ({ stats, date }) => {
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="left">Summary</TableCell>
-            <TableCell>{new Date(date).toDateString()}</TableCell>
-          </TableRow>
-        </TableHead>
         <TableBody>{statsList}</TableBody>
       </Table>
     </TableContainer>
   );
 };
+//{new Date(date).toDateString()}

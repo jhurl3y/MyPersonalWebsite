@@ -13,7 +13,8 @@ export const aboutStrings = {
   friends:
     "Love socialising and having the craic over a few pints, and especially meeting new people.",
   music: "Tunes/Likes",
-  garmin: "Latest Garmin Data",
+  garminSummary: "Garmin Summary",
+  garminLastActivity: "Most Recent Activity",
   totalKilocalories: "Total Calories",
   totalSteps: "Total Steps",
   totalDistanceMeters: "Total Distance (m)",

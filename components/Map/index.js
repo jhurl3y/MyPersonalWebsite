@@ -10,6 +10,7 @@ export default ({
   showPolyline = false,
   polylineData = [],
   polylineOptions = {},
+  mapClasses,
 }) => {
   const classes = Styles();
   const options = {
@@ -49,7 +50,7 @@ export default ({
   ));
 
   return (
-    <div id={title} className={classes.map}>
+    <div id={title} className={mapClasses}>
       <Map />
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import Styles from "./styles";
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 import { fetchGarmin, filterObject } from "../../../utils/helpers";
 import SummaryTable from "./summaryTable";
 import SummaryPie from "./summaryPie";
@@ -9,6 +10,7 @@ import ActivityChart from "./activityChart";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Map from "../../Map";
+import { aboutStrings } from "../../../utils/strings";
 
 const allowedSummaryStats = [
   "totalKilocalories",
@@ -108,57 +110,69 @@ export default () => {
   }, [garminData.last_activity_details]);
 
   return (
-    <Grid container spacing={6} className={classes.garmin}>
-      <Grid item xs={12} sm={12} md={6}>
-        {garminData.summary && (
-          <SummaryTable
-            stats={filterObject(garminData.summary, allowedSummaryStats)}
-            date={garminData.summary.calendarDate}
-          />
-        )}
+    <div>
+      {garminData.summary && (
+        <Typography
+          variant="h3"
+          align="center"
+          className={`${classes.subHeading} ${classes.spacing}`}
+        >
+          {`${aboutStrings.garminSummary} - ${new Date(
+            garminData.summary.calendarDate
+          ).toDateString()}`}
+        </Typography>
+      )}
+      <Grid container spacing={6} className={classes.garmin}>
+        <Grid item xs={12} sm={12} md={6}>
+          {garminData.summary && (
+            <SummaryTable
+              stats={filterObject(garminData.summary, allowedSummaryStats)}
+              date={garminData.summary.calendarDate}
+            />
+          )}
+        </Grid>
+        <Grid item xs={12} sm={12} md={6}>
+          {garminData.summary && (
+            <SummaryPie
+              highlyActiveSeconds={garminData.summary.highlyActiveSeconds}
+              activeSeconds={garminData.summary.activeSeconds}
+              sedentarySeconds={garminData.summary.sedentarySeconds}
+              sleepingSeconds={garminData.summary.sleepingSeconds}
+              date={garminData.summary.calendarDate}
+            />
+          )}
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={12} md={6}>
-        {garminData.summary && (
-          <SummaryPie
-            highlyActiveSeconds={garminData.summary.highlyActiveSeconds}
-            activeSeconds={garminData.summary.activeSeconds}
-            sedentarySeconds={garminData.summary.sedentarySeconds}
-            sleepingSeconds={garminData.summary.sleepingSeconds}
-            date={garminData.summary.calendarDate}
-          />
-        )}
-      </Grid>
-      <Grid item xs={12} sm={12} md={6}>
-        {garminData.last_activity_summary && garminData.last_device_used && (
-          <ActivityCard
-            summary={filterObject(
-              garminData.last_activity_summary,
-              allowedActivityStats
-            )}
-            last_device_used={garminData.last_device_used}
-          />
-        )}
-      </Grid>
-      <Grid item xs={12} sm={12} md={6}>
-        {chartData && (
-          <Card>
-            <CardContent>
-              <ActivityChart label="Heart Rates" data={chartData.heartRates} />
-              <ActivityChart label="Speed" data={chartData.speed} />
-            </CardContent>
-          </Card>
-        )}
-      </Grid>
-      <Grid item xs={12} sm={12} md={6}>
-        {chartData && (
-          <div className={classes.map}>
+      {garminData.last_activity_summary && (
+        <Typography
+          variant="h3"
+          align="center"
+          className={`${classes.subHeading} ${classes.spacingBottom}`}
+        >
+          {aboutStrings.garminLastActivity}
+        </Typography>
+      )}
+      <Grid container spacing={6} className={classes.garmin}>
+        <Grid item xs={12} sm={12} md={6}>
+          {garminData.last_activity_summary && garminData.last_device_used && (
+            <ActivityCard
+              summary={filterObject(
+                garminData.last_activity_summary,
+                allowedActivityStats
+              )}
+              last_device_used={garminData.last_device_used}
+            />
+          )}
+        </Grid>
+        <Grid item xs={12} sm={12} md={6}>
+          {chartData && (
             <Map
               location={
                 chartData.pathCoordinates[
                   Math.round((chartData.pathCoordinates.length - 1) / 4)
                 ]
               }
-              zoom={13}
+              zoom={14}
               title="activity-map"
               showPolyline
               polylineData={chartData.pathCoordinates}
@@ -167,10 +181,24 @@ export default () => {
                 strokeOpacity: 0.75,
                 strokeWeight: 2,
               }}
+              mapClasses={classes.map}
             />
-          </div>
-        )}
+          )}
+        </Grid>
+        <Grid item xs={12} sm={12} md={12}>
+          {chartData && (
+            <Card>
+              <CardContent>
+                <ActivityChart
+                  label="Heart Rates"
+                  data={chartData.heartRates}
+                />
+                <ActivityChart label="Speed" data={chartData.speed} />
+              </CardContent>
+            </Card>
+          )}
+        </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 };
