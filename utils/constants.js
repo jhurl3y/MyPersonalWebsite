@@ -267,7 +267,7 @@ export const experience = [
   },
 ];
 
-export const fadeDuration = 500;
+export const fadeDuration = 300;
 
 export const SPOTIFY_PLAYLISTS = [
   "https://open.spotify.com/embed/playlist/37i9dQZF1EpAh9wBJPJbF3",

@@ -9,7 +9,8 @@ import { aboutStrings } from "../../utils/strings";
 import Styles from "./styles";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { WIDGET_HEIGHT } from "../../utils/constants";
-import GarminWidget from "./garminWidget";
+import GarminSummary from "./garminSummary";
+import GarminLastActivity from "./garminLastActivity";
 
 const SpotifyWidget = () => (
   <iframe
@@ -94,7 +95,12 @@ export default () => {
         </Grid>
       </Container>
       <Container className={classes.garminContent}>
-        <GarminWidget />
+        <Fade duration={getFadeDuration()} left>
+          <GarminSummary />
+        </Fade>
+        <Fade duration={getFadeDuration()} right>
+          <GarminLastActivity />
+        </Fade>
       </Container>
     </Container>
   );
