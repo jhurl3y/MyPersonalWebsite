@@ -9,21 +9,31 @@ export default makeStyles((theme) => ({
     marginBottom: -theme.spacing(8),
   },
   subHeading: { fontSize: "2rem" },
+  subSubHeading: { fontSize: "1.5rem" },
   spacingBottom: { marginBottom: theme.spacing(7) },
+  mostRecent: {
+    fontSize: "2rem",
+    marginBottom: theme.spacing(7),
+  },
   map: {
     height: "57vh",
     width: "100%",
   },
   charts: {
-    padding: theme.spacing(7, 2),
+    padding: theme.spacing(7, 2, 7, 7),
   },
   axisLabel: {
     fontSize: "1.075rem",
   },
-  [theme.breakpoints.down("lg")]: {
+  [theme.breakpoints.down("md")]: {
     map: {
-      height: "57vh",
-      width: "100%",
+      height: "65vh",
     },
+  },
+  [theme.breakpoints.down("sm")]: {
+    map: {
+      height: "40vh",
+    },
+    mostRecent: { marginTop: -theme.spacing(9) },
   },
 }));

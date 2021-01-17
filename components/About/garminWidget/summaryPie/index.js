@@ -10,7 +10,6 @@ export default ({
   activeSeconds,
   sedentarySeconds,
   sleepingSeconds,
-  date,
 }) => {
   const classes = Styles();
   const [hovered, setHovered] = useState(null);

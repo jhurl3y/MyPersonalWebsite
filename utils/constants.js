@@ -299,5 +299,6 @@ export const COLORS = {
 export const FORMSPREE_URL = "https://formspree.io";
 
 export const GARMIN_API_DEV = "https://api.dev.jameshurley.ie";
+// export const GARMIN_API_DEV = "http://127.0.0.1:8000";
 
 export const GARMIN_API_PROD = "https://api.jameshurley.ie";

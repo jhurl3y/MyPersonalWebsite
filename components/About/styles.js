@@ -43,6 +43,7 @@ export default makeStyles((theme) => ({
   [theme.breakpoints.down("sm")]: {
     musicContent: {
       flexDirection: "column",
+      margin: theme.spacing(6, 8, 7),
     },
   },
   [theme.breakpoints.down("xs")]: {

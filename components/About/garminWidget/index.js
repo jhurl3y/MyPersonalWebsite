@@ -113,15 +113,22 @@ export default () => {
   return (
     <div>
       {garminData.summary && (
-        <Typography
-          variant="h3"
-          align="center"
-          className={`${classes.subHeading} ${classes.spacingBottom}`}
-        >
-          {`${aboutStrings.garminSummary} - ${new Date(
-            garminData.summary.calendarDate
-          ).toDateString()}`}
-        </Typography>
+        <div className={classes.spacingBottom}>
+          <Typography
+            variant="h3"
+            align="center"
+            className={classes.subHeading}
+          >
+            {aboutStrings.garminSummary}
+          </Typography>
+          <Typography
+            color="textSecondary"
+            align="center"
+            className={classes.subSubHeading}
+          >
+            {new Date(garminData.summary.calendarDate).toDateString()}
+          </Typography>
+        </div>
       )}
       <Grid container spacing={6} className={classes.garmin}>
         <Grid item xs={12} sm={12} md={6}>
@@ -145,11 +152,7 @@ export default () => {
         </Grid>
       </Grid>
       {garminData.last_activity_summary && (
-        <Typography
-          variant="h3"
-          align="center"
-          className={`${classes.subHeading} ${classes.spacingBottom}`}
-        >
+        <Typography variant="h3" align="center" className={classes.mostRecent}>
           {aboutStrings.garminLastActivity}
         </Typography>
       )}
@@ -186,20 +189,20 @@ export default () => {
             />
           )}
         </Grid>
-        <Grid item xs={12} sm={12} md={12}>
+        <Grid item lg={12}>
           {chartData && (
             <Card className={classes.charts}>
               <CardContent>
-                <Grid container spacing={3}>
-                  <Grid item xs={2} align="center">
+                <Grid container>
+                  <Grid item xs={12} align="center">
                     <Typography
                       className={classes.axisLabel}
                       color="textSecondary"
                     >
-                      Heart Rate <br /> (beats/min)
+                      Heart Rate (beats/min)
                     </Typography>
                   </Grid>
-                  <Grid item xs={10} className={classes.spacingBottom}>
+                  <Grid item xs={12} className={classes.spacingBottom}>
                     <ActivityChart
                       label="Heart Rate ❤️"
                       tooltipLabel="❤️"
@@ -208,15 +211,15 @@ export default () => {
                       backgroundColor={COLORS.red}
                     />
                   </Grid>
-                  <Grid item xs={2} align="center">
+                  <Grid item xs={12} align="center">
                     <Typography
                       className={classes.axisLabel}
                       color="textSecondary"
                     >
-                      Speed <br /> (mins/km)
+                      Speed (mins/km)
                     </Typography>
                   </Grid>
-                  <Grid item xs={10}>
+                  <Grid item xs={12}>
                     <ActivityChart
                       label="Speed 💨"
                       tooltipLabel="💨"

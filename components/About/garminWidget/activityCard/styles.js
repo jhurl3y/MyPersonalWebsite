@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
   content: { padding: theme.spacing(3, 5) },
   leftPadding: { paddingLeft: theme.spacing(4) },
   rightPadding: { paddingRight: theme.spacing(4) },
-  [theme.breakpoints.down("lg")]: {
+  [theme.breakpoints.down("md")]: {
     leftPadding: { paddingLeft: theme.spacing(0) },
     rightPadding: { paddingRight: theme.spacing(0) },
   },
