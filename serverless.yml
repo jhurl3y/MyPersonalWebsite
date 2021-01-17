@@ -1,12 +1,16 @@
 service: ${file(./config.${self:custom.currentStage}.json):SERVICE}
+useDotenv: true
 
 provider:
+  lambdaHashingVersion: 20201221
   name: aws
   runtime: nodejs10.x
   stage: ${env:NODE_ENV}
   region: eu-west-1
   environment:
     NODE_ENV: ${env:NODE_ENV}
+  apiGateway:
+    shouldStartNameWithService: true
 
 functions:
   server:
@@ -33,3 +37,5 @@ package:
     - components/**
     - src/**
     - utils/**
+    - out/**
+    - .next/cache/**
