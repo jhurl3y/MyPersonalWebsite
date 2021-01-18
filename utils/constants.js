@@ -57,6 +57,8 @@ export const RIGHT_KEY = 39;
 
 export const MAP_ZOOM = 13;
 
+export const MAP_ZOOM_GARMIN = 14;
+
 export const LOCATIONS = [
   {
     name: "galway",
@@ -294,11 +296,54 @@ export const COLORS = {
   red: "#d92e3c",
   orange: "#eb9a0e",
   green: "#29941f",
+  polyline: "#ff2527",
 };
+
+export const POLYLINE_OPACITY = 0.75;
+
+export const POLYLINE_WEIGHT = 2;
 
 export const FORMSPREE_URL = "https://formspree.io";
 
-export const GARMIN_API_DEV = "https://api.dev.jameshurley.ie";
-// export const GARMIN_API_DEV = "http://127.0.0.1:8000";
+//export const GARMIN_API_DEV = "https://api.dev.jameshurley.ie";
+export const GARMIN_API_DEV = "http://127.0.0.1:8000";
 
 export const GARMIN_API_PROD = "https://api.jameshurley.ie";
+
+export const ALLOWED_SUMMARY_STATS = [
+  "totalKilocalories",
+  "totalSteps",
+  "totalDistanceMeters",
+  "floorsAscended",
+  "floorsDescended",
+  "minHeartRate",
+  "maxHeartRate",
+  "restingHeartRate",
+  "lastSevenDaysAvgRestingHeartRate",
+];
+
+export const ALLOWED_ACTIVITY_STATS = [
+  "activityName",
+  "startTimeGMT",
+  "distance",
+  "duration",
+  "averageSpeed",
+  "maxSpeed",
+  "startLatitude",
+  "startLongitude",
+  "calories",
+  "averageHR",
+  "maxHR",
+  "steps",
+  "avgStrideLength",
+  "minElevation",
+  "maxElevation",
+];
+
+export const SUMMARY_PIE_POSITION = 70;
+
+export const SUMMARY_PIE_ANGLE = 18;
+
+export const SUMMARY_PIE_LINE_WIDTH = 20;
+
+export const SUMMARY_PIE_RADIUS = 30;

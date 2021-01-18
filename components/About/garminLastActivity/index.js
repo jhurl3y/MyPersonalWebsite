@@ -9,25 +9,13 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Map from "../../Map";
 import { aboutStrings } from "../../../utils/strings";
-import { COLORS } from "../../../utils/constants";
-
-const allowedActivityStats = [
-  "activityName",
-  "startTimeGMT",
-  "distance",
-  "duration",
-  "averageSpeed",
-  "maxSpeed",
-  "startLatitude",
-  "startLongitude",
-  "calories",
-  "averageHR",
-  "maxHR",
-  "steps",
-  "avgStrideLength",
-  "minElevation",
-  "maxElevation",
-];
+import {
+  COLORS,
+  POLYLINE_OPACITY,
+  POLYLINE_WEIGHT,
+  MAP_ZOOM_GARMIN,
+  ALLOWED_ACTIVITY_STATS,
+} from "../../../utils/constants";
 
 const parseChartData = (details) => {
   let heartRates = [];
@@ -35,8 +23,13 @@ const parseChartData = (details) => {
   let pathCoordinates = [];
 
   details.forEach((detail, i) => {
+    // Heart Rate: time (convert to mins), heart rate (beats/min)
     heartRates[i] = [detail.metrics[1] / 60.0, detail.metrics[6]];
+
+    // Speed: time (convert to mins), speed (convert to mins/km)
     speed[i] = [detail.metrics[1] / 60.0, 1000.0 / detail.metrics[8] / 60.0];
+
+    // Path: lat, long
     pathCoordinates[i] = { lat: detail.metrics[14], lng: detail.metrics[12] };
   });
 
@@ -97,7 +90,7 @@ export default () => {
             <ActivityCard
               summary={filterObject(
                 garminData.last_activity_summary,
-                allowedActivityStats
+                ALLOWED_ACTIVITY_STATS
               )}
               last_device_used={garminData.last_device_used}
             />
@@ -111,14 +104,14 @@ export default () => {
                   Math.round((chartData.pathCoordinates.length - 1) / 4)
                 ]
               }
-              zoom={14}
+              zoom={MAP_ZOOM_GARMIN}
               title="activity-map"
               showPolyline
               polylineData={chartData.pathCoordinates}
               polylineOptions={{
-                strokeColor: "#ff2527",
-                strokeOpacity: 0.75,
-                strokeWeight: 2,
+                strokeColor: COLORS.polyline,
+                strokeOpacity: POLYLINE_OPACITY,
+                strokeWeight: POLYLINE_WEIGHT,
               }}
               mapClasses={classes.map}
             />
@@ -134,13 +127,14 @@ export default () => {
                       className={classes.axisLabel}
                       color="textSecondary"
                     >
-                      Heart Rate (beats/min)
+                      {aboutStrings.heartRateLabel}
                     </Typography>
                   </Grid>
                   <Grid item xs={12} className={classes.spacingBottom}>
                     <ActivityChart
-                      label="Heart Rate ❤️"
-                      tooltipLabel="❤️"
+                      label={aboutStrings.heartRate}
+                      tooltipLabel={aboutStrings.heartRateTooltip}
+                      timeLabel={aboutStrings.timeLabel}
                       data={chartData.heartRates}
                       showAxis={false}
                       backgroundColor={COLORS.red}
@@ -151,13 +145,14 @@ export default () => {
                       className={classes.axisLabel}
                       color="textSecondary"
                     >
-                      Speed (mins/km)
+                      {aboutStrings.speedLabel}
                     </Typography>
                   </Grid>
                   <Grid item xs={12}>
                     <ActivityChart
-                      label="Speed 💨"
-                      tooltipLabel="💨"
+                      label={aboutStrings.speed}
+                      tooltipLabel={aboutStrings.speedTooltip}
+                      timeLabel={aboutStrings.timeLabel}
                       tooltipDecimal
                       data={chartData.speed}
                     />

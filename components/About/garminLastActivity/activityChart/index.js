@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useCallback } from "react";
 import { Chart } from "react-charts";
 import Styles from "./styles";
 
@@ -7,12 +7,12 @@ export default ({
   label,
   tooltipLabel,
   tooltipDecimal,
+  timeLabel,
   showAxis = true,
   backgroundColor = null,
 }) => {
   const classes = Styles();
-
-  const axes = React.useMemo(
+  const axes = useMemo(
     () => [
       {
         primary: true,
@@ -27,7 +27,7 @@ export default ({
     []
   );
 
-  const getSeriesStyle = React.useCallback((series) => {
+  const getSeriesStyle = useCallback((_) => {
     return backgroundColor ? { fill: backgroundColor } : {};
   }, []);
 
@@ -38,12 +38,12 @@ export default ({
     []
   );
 
-  const primaryCursor = React.useMemo(
+  const primaryCursor = useMemo(
     () => ({
       render: (props) => (
-        <span style={{ fontSize: "1rem" }}>
+        <span className={classes.cursor}>
           <span role="img" aria-label="icon">
-            🕑
+            {timeLabel}
           </span>{" "}
           {`${(props.resolvedValue
             ? props.resolvedValue.toFixed(2)
@@ -58,7 +58,7 @@ export default ({
   const secondaryCursor = React.useMemo(
     () => ({
       render: (props) => (
-        <span style={{ fontSize: "1rem" }}>
+        <span className={classes.cursor}>
           <span role="img" aria-label="icon">
             {tooltipLabel}
           </span>{" "}

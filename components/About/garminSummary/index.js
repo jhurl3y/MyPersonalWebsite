@@ -6,18 +6,7 @@ import { fetchGarmin, filterObject } from "../../../utils/helpers";
 import SummaryTable from "./summaryTable";
 import SummaryPie from "./summaryPie";
 import { aboutStrings } from "../../../utils/strings";
-
-const allowedSummaryStats = [
-  "totalKilocalories",
-  "totalSteps",
-  "totalDistanceMeters",
-  "floorsAscended",
-  "floorsDescended",
-  "minHeartRate",
-  "maxHeartRate",
-  "restingHeartRate",
-  "lastSevenDaysAvgRestingHeartRate",
-];
+import { ALLOWED_SUMMARY_STATS } from "../../../utils/constants";
 
 export default () => {
   const classes = Styles();
@@ -40,17 +29,13 @@ export default () => {
     <>
       {garminData.summary && (
         <div className={classes.spacingBottom}>
-          <Typography
-            variant="h3"
-            align="center"
-            className={classes.subHeading}
-          >
+          <Typography variant="h3" align="center" className={classes.summary}>
             {aboutStrings.garminSummary}
           </Typography>
           <Typography
             color="textSecondary"
             align="center"
-            className={classes.subSubHeading}
+            className={classes.date}
           >
             {new Date(garminData.summary.calendarDate).toDateString()}
           </Typography>
@@ -60,7 +45,7 @@ export default () => {
         <Grid item xs={12} sm={12} md={6}>
           {garminData.summary && (
             <SummaryTable
-              stats={filterObject(garminData.summary, allowedSummaryStats)}
+              stats={filterObject(garminData.summary, ALLOWED_SUMMARY_STATS)}
               date={garminData.summary.calendarDate}
             />
           )}

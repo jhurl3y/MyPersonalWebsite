@@ -3,6 +3,7 @@ import Card from "@material-ui/core/Card";
 import Grid from "@material-ui/core/Grid";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import { aboutStrings } from "../../../../utils/strings";
 import Styles from "./styles";
 
 export default ({
@@ -45,7 +46,7 @@ export default ({
         <Grid container spacing={3}>
           <Grid item xs={6} sm={3} md={3}>
             <Typography color="textSecondary" variant="span" align="left">
-              Distance:{" "}
+              {aboutStrings.distance}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -59,7 +60,7 @@ export default ({
               variant="span"
               className={classes.leftPadding}
             >
-              Duration:{" "}
+              {aboutStrings.duration}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -69,7 +70,7 @@ export default ({
           </Grid>
           <Grid item xs={6} sm={3} md={3}>
             <Typography color="textSecondary" variant="span">
-              Average Speed:{" "}
+              {aboutStrings.avgSpeed}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -85,7 +86,7 @@ export default ({
               variant="span"
               className={classes.leftPadding}
             >
-              Max Speed:{" "}
+              {aboutStrings.maxSpeed}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -97,7 +98,7 @@ export default ({
           </Grid>
           <Grid item xs={6} sm={3} md={3}>
             <Typography color="textSecondary" variant="span">
-              Calories:{" "}
+              {aboutStrings.calories}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -111,7 +112,7 @@ export default ({
               variant="span"
               className={classes.leftPadding}
             >
-              Steps:{" "}
+              {aboutStrings.steps}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -121,7 +122,7 @@ export default ({
           </Grid>
           <Grid item xs={6} sm={3} md={3}>
             <Typography color="textSecondary" variant="span">
-              Average HR:{" "}
+              {aboutStrings.averageHr}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -135,7 +136,7 @@ export default ({
               variant="span"
               className={classes.leftPadding}
             >
-              Max HR:{" "}
+              {aboutStrings.maxHr}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -149,7 +150,7 @@ export default ({
               variant="span"
               className={classes.rightPadding}
             >
-              Min Elevation:{" "}
+              {aboutStrings.minElevation}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -163,7 +164,7 @@ export default ({
               variant="span"
               className={classes.leftPadding}
             >
-              Max Elevation:{" "}
+              {aboutStrings.maxElevation}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">
@@ -173,7 +174,7 @@ export default ({
           </Grid>
           <Grid item xs={6} sm={3} md={3}>
             <Typography color="textSecondary" variant="span">
-              Avg Stride Length:{" "}
+              {aboutStrings.avgStrideLength}{" "}
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3} md={3} align="right">

@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import { PieChart } from "react-minimal-pie-chart";
 import Typography from "@material-ui/core/Typography";
 import { aboutStrings } from "../../../../utils/strings";
-import { COLORS } from "../../../../utils/constants";
+import {
+  COLORS,
+  SUMMARY_PIE_POSITION,
+  SUMMARY_PIE_ANGLE,
+  SUMMARY_PIE_LINE_WIDTH,
+  SUMMARY_PIE_RADIUS,
+} from "../../../../utils/constants";
 import Styles from "./styles";
 
 export default ({
@@ -45,7 +51,7 @@ export default ({
         data={data}
         label={({ dataEntry, dataIndex }) =>
           hovered === dataIndex
-            ? `${parseFloat(dataEntry.value / 60 / 60).toFixed(2)} hrs`
+            ? `${parseFloat(dataEntry.value / 60 / 60).toFixed(2)} hrs` // convert secs to hours
             : dataEntry.title
         }
         labelStyle={(index) => ({
@@ -55,10 +61,10 @@ export default ({
         })}
         onMouseOver={(_, index) => setHovered(index)}
         onMouseOut={() => setHovered(null)}
-        labelPosition={70}
-        paddingAngle={18}
-        lineWidth={20}
-        radius={30}
+        labelPosition={SUMMARY_PIE_POSITION}
+        paddingAngle={SUMMARY_PIE_ANGLE}
+        lineWidth={SUMMARY_PIE_LINE_WIDTH}
+        radius={SUMMARY_PIE_RADIUS}
         animate
         rounded
       />

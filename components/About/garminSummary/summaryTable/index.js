@@ -51,4 +51,3 @@ export default ({ stats, date }) => {
     </TableContainer>
   );
 };
-//{new Date(date).toDateString()}
