@@ -27,7 +27,10 @@ const parseChartData = (details) => {
     heartRates[i] = [detail.metrics[1] / 60.0, detail.metrics[6]];
 
     // Speed: time (convert to mins), speed (convert to mins/km)
-    speed[i] = [detail.metrics[1] / 60.0, 1000.0 / detail.metrics[8] / 60.0];
+    speed[i] = [
+      detail.metrics[1] / 60.0,
+      detail.metrics[8] === 0 ? 0 : 1000.0 / detail.metrics[8] / 60.0,
+    ];
 
     // Path: lat, long
     pathCoordinates[i] = { lat: detail.metrics[14], lng: detail.metrics[12] };
