@@ -1,6 +1,5 @@
-import { isMobile } from "react-device-detect";
-import { fadeDuration } from "./constants";
 import { isBrowser } from "react-device-detect";
+import { fadeDuration } from "./constants";
 import shuffle from "lodash.shuffle";
 import {
   BACKGROUNDS,
@@ -14,7 +13,7 @@ import {
   GARMIN_API_PROD,
 } from "./constants";
 
-export const getFadeDuration = () => (isMobile ? 0 : fadeDuration);
+export const getFadeDuration = () => fadeDuration;
 
 export const getBackground = async (backgroundUrl) => {
   const response = await fetch(backgroundUrl);
