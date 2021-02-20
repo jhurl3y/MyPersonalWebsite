@@ -144,7 +144,7 @@ export default ({
               {`${Math.floor(maxHR).toLocaleString()}`}
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} md={3}>
+          <Grid item xs={6} sm={4} md={4}>
             <Typography
               color="textSecondary"
               variant="subtitle1"
@@ -153,12 +153,12 @@ export default ({
               {aboutStrings.minElevation}{" "}
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} md={3} align="right">
+          <Grid item xs={6} sm={2} md={2} align="right">
             <Typography variant="subtitle1">
-              {`${Math.floor(minElevation).toLocaleString()} m`}
+              {`${(minElevation / 1000.0).toLocaleString()} km`}
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} md={3}>
+          <Grid item xs={6} sm={4} md={4}>
             <Typography
               color="textSecondary"
               variant="subtitle1"
@@ -167,17 +167,17 @@ export default ({
               {aboutStrings.maxElevation}{" "}
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} md={3} align="right">
+          <Grid item xs={6} sm={2} md={2} align="right">
             <Typography variant="subtitle1">
-              {`${Math.floor(maxElevation).toLocaleString()} m`}
+              {`${(maxElevation / 1000.0).toLocaleString()} km`}
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} md={3}>
+          <Grid item xs={6} sm={4} md={4}>
             <Typography color="textSecondary" variant="subtitle1">
               {aboutStrings.avgStrideLength}{" "}
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} md={3} align="right">
+          <Grid item xs={6} sm={2} md={2} align="right">
             <Typography variant="subtitle1" className={classes.rightPadding}>
               {`${Math.floor(avgStrideLength).toLocaleString()} m`}
             </Typography>

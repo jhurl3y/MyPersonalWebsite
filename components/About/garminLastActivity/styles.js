@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
     marginBottom: theme.spacing(7),
   },
   map: {
-    height: "57vh",
+    height: "74vh",
     width: "100%",
   },
   charts: {
@@ -21,12 +21,12 @@ export default makeStyles((theme) => ({
   },
   [theme.breakpoints.down("md")]: {
     map: {
-      height: "65vh",
+      height: "79vh",
     },
   },
   [theme.breakpoints.down("sm")]: {
     map: {
-      height: "40vh",
+      height: "50vh",
     },
     mostRecent: { marginTop: -theme.spacing(9) },
   },
