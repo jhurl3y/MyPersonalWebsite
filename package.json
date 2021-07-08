@@ -33,7 +33,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@material-ui/core": "^4.10.2",
+    "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.5.1",
     "lodash.chunk": "^4.2.0",
     "lodash.shuffle": "^4.2.0",
