@@ -11,6 +11,7 @@ _Sample content:_
 ```
 GOOGLE_MAPS_API_KEY="123"
 NODE_ENV="production"
+STAGE="prod"
 GA_ID=UA-123
 FORMSPREE_TOKENS="abc"
 ```
@@ -27,3 +28,16 @@ npm run dev
 ```
 
 #### 3) Go to [localhost](http://localhost:3000)
+
+#### Test serverless offline
+
+```bash
+sls offline
+```
+
+#### Deploy to aws
+
+```bash
+npm run deploy-dev
+npm run deploy-prod
+```

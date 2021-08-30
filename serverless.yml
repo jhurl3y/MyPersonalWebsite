@@ -5,31 +5,29 @@ provider:
   lambdaHashingVersion: 20201221
   name: aws
   runtime: nodejs10.x
-  stage: ${env:NODE_ENV}
+  stage: dev
   region: eu-west-1
-  environment:
-    NODE_ENV: ${env:NODE_ENV}
   apiGateway:
     shouldStartNameWithService: true
 
 functions:
   server:
     handler: index.server
+    environment:
+      STAGE: ${self:custom.currentStage}
     events:
       - http: ANY /
       - http: ANY /{proxy+}
 
-plugins:
-  - serverless-apigw-binary
-  - serverless-offline
-  - serverless-dotenv-plugin
-
 custom:
-  defaultStage: dev
-  currentStage: ${opt:stage, self:custom.defaultStage}
+  currentStage: ${opt:stage, self:provider.stage}
   apigwBinary:
     types:
       - "*/*"
+
+plugins:
+  - serverless-apigw-binary
+  - serverless-offline
 
 package:
   exclude:
