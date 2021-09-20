@@ -1,8 +1,8 @@
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import Linkedin from "../../static/assets/icons/linkedin.svg";
-import Github from "../../static/assets/icons/github.svg";
-import Twitter from "../../static/assets/icons/twitter.svg";
+import Linkedin from "../../public/static/assets/icons/linkedin.svg";
+import Github from "../../public/static/assets/icons/github.svg";
+import Twitter from "../../public/static/assets/icons/twitter.svg";
 import { footerStrings } from "../../utils/strings";
 import Styles from "./styles";
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import LogoDark from "../../static/assets/icons/hurley-dark.svg";
-import LogoLight from "../../static/assets/icons/hurley-white.svg";
+import LogoDark from "../../public/static/assets/icons/hurley-dark.svg";
+import LogoLight from "../../public/static/assets/icons/hurley-white.svg";
 import Container from "@material-ui/core/Container";
 import Transition from "../Transition";
 import PrettyLink from "./prettyLink";

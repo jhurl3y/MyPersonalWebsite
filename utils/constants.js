@@ -1,15 +1,15 @@
-import Python from "../static/assets/icons/python.svg";
-import Ruby from "../static/assets/icons/ruby.svg";
-import Javascript from "../static/assets/icons/javascript.svg";
-import WebDev from "../static/assets/icons/web_dev.svg";
-import Java from "../static/assets/icons/java.svg";
-import Git from "../static/assets/icons/git.svg";
-import Algorithms from "../static/assets/icons/algorithms.svg";
-import Mobile from "../static/assets/icons/mobile.svg";
-import ABTesting from "../static/assets/icons/a_b_testing.svg";
-import SQL from "../static/assets/icons/sql.svg";
-import SystemDesign from "../static/assets/icons/system_design.svg";
-import Testing from "../static/assets/icons/testing.svg";
+import Python from "../public/static/assets/icons/python.svg";
+import Ruby from "../public/static/assets/icons/ruby.svg";
+import Javascript from "../public/static/assets/icons/javascript.svg";
+import WebDev from "../public/static/assets/icons/web_dev.svg";
+import Java from "../public/static/assets/icons/java.svg";
+import Git from "../public/static/assets/icons/git.svg";
+import Algorithms from "../public/static/assets/icons/algorithms.svg";
+import Mobile from "../public/static/assets/icons/mobile.svg";
+import ABTesting from "../public/static/assets/icons/a_b_testing.svg";
+import SQL from "../public/static/assets/icons/sql.svg";
+import SystemDesign from "../public/static/assets/icons/system_design.svg";
+import Testing from "../public/static/assets/icons/testing.svg";
 import { skillStrings, experienceStrings } from "./strings";
 
 export const PAGES = ["home", "about", "experience", "contact"];
