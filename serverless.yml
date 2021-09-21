@@ -1,11 +1,11 @@
-service: ${file(./config.${self:custom.currentStage}.json):SERVICE}
+service: ${file(./config.${opt:stage, 'dev'}.json):SERVICE}
+configValidationMode: error
 useDotenv: true
 
 provider:
   lambdaHashingVersion: 20201221
   name: aws
-  runtime: nodejs10.x
-  stage: dev
+  runtime: nodejs14.x
   region: eu-west-1
   apiGateway:
     shouldStartNameWithService: true
@@ -14,26 +14,25 @@ functions:
   server:
     handler: index.server
     environment:
-      STAGE: ${self:custom.currentStage}
+      STAGE: ${opt:stage, 'dev'}
+      NODE_ENV: production
     events:
       - http: ANY /
       - http: ANY /{proxy+}
 
 custom:
-  currentStage: ${opt:stage, self:provider.stage}
   apigwBinary:
     types:
       - "*/*"
 
 plugins:
   - serverless-apigw-binary
-  - serverless-offline
 
 package:
-  exclude:
-    - pages/**
-    - components/**
-    - src/**
-    - utils/**
-    - out/**
-    - .next/cache/**
+  patterns:
+    - "!pages/**"
+    - "!components/**"
+    - "!src/**"
+    - "!utils/**"
+    - "!out/**"
+    - "!.next/cache/**"
