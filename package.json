@@ -8,8 +8,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy-dev": "node-prune && next build && sls deploy",
-    "deploy-prod": "node-prune && next build && sls deploy --stage prod"
+    "deploy-dev": "npm prune && next build && sls deploy",
+    "deploy-prod": "npm prune && next build && sls deploy --stage prod"
   },
   "keywords": [],
   "author": "",
