@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import IconButton from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -7,7 +8,7 @@ import Styles from "./styles";
 
 export default ({ pages, dark }) => {
   const classes = Styles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);

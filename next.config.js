@@ -3,6 +3,7 @@ const withCSS = require("@zeit/next-css");
 require("dotenv").config();
 
 module.exports = withCSS({
+  webpack5: false,
   assetPrefix: "./",
   exportPathMap: function () {
     return {
