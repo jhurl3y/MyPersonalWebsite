@@ -234,13 +234,22 @@ export const SKILLS = [
 
 export const experience = [
   {
+    color: "#ffe11b",
+    type: "work",
+    date: experienceStrings.surveymonkeyMLDate,
+    title: experienceStrings.surveymonkeyMLTitle,
+    location: experienceStrings.surveymonkeyMLLocation,
+    tasks: experienceStrings.surveymonkeyMLTasks,
+    skills: experienceStrings.surveymonkeyMLSkills,
+  },
+  {
     color: "#00BF6F",
     type: "work",
-    date: experienceStrings.surveymonkeyDate,
-    title: experienceStrings.surveymonkeyTitle,
-    location: experienceStrings.surveymonkeyLocation,
-    tasks: experienceStrings.surveymonkeyTasks,
-    skills: experienceStrings.surveymonkeySkills,
+    date: experienceStrings.surveymonkeyGrowthDate,
+    title: experienceStrings.surveymonkeyGrowthTitle,
+    location: experienceStrings.surveymonkeyGrowthLocation,
+    tasks: experienceStrings.surveymonkeyGrowthTasks,
+    skills: experienceStrings.surveymonkeyGrowthSkills,
   },
   {
     color: "#daad58",

@@ -53,12 +53,19 @@ export const experienceStrings = {
   experience: "Experience",
   cv: "Curriculum Vitae",
   goodAt: "I am good at",
-  surveymonkeyDate: "2018 - present",
-  surveymonkeyTitle: "Software Engineer, SurveyMonkey",
-  surveymonkeyLocation: "Dublin, Ireland",
-  surveymonkeyTasks:
+  surveymonkeyGrowthDate: "2018 - 2021",
+  surveymonkeyMLDate: "2021 - present",
+  surveymonkeyGrowthTitle: "Growth Engineer, Momentive (formerly SurveyMonkey)",
+  surveymonkeyMLTitle: "Machine Learning Engineer, Momentive (formerly SurveyMonkey)",
+  surveymonkeyMLLocation: "Remote, Ireland",
+  surveymonkeyGrowthLocation: "Dublin, Ireland",
+  surveymonkeyGrowthTasks:
     "Growth Hacking, Experimentation, Development, Product, Interviewing",
-  surveymonkeySkills: "React | GraphQL | Python | Docker",
+  surveymonkeyMLTasks:
+    "Supporting DS to run ML algorithms in production",
+  surveymonkeyMLSkills:
+    "AI | Data Science | ML PLatform | Python",
+  surveymonkeyGrowthSkills: "React | GraphQL | Python | Docker",
   exordoDate: "2016 - 2018",
   exordoTitle: "Software Engineer, Ex Ordo",
   exordoLocation: "Galway, Ireland",
