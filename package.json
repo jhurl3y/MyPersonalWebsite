@@ -33,7 +33,7 @@
     "express": "^4.17.1",
     "lodash.chunk": "^4.2.0",
     "lodash.shuffle": "^4.2.0",
-    "next": "^11.1.2",
+    "next": "^13.0.2",
     "react": "^17.0.2",
     "react-charts": "^2.0.0-beta.7",
     "react-cookie-consent": "^3.0.0",
