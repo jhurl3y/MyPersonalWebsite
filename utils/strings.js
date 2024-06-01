@@ -105,6 +105,7 @@ export const contactStrings = {
   galway: "Galway",
   or: "or",
   dublin: "Dublin",
+  sf: "San Francisco",
   map: "map",
   firstName: "First Name",
   lastName: "Last Name",

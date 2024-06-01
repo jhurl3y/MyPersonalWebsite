@@ -70,6 +70,11 @@ export const LOCATIONS = [
     lat: 53.35,
     lng: -6.26,
   },
+  {
+    name: "sf",
+    lat: 37.8,
+    lng: -122.42,
+  },
 ];
 
 export const EMAIL = "jhurley070@gmail.com";

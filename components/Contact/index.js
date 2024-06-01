@@ -23,7 +23,7 @@ const StyledButton = withStyles((theme) => ({
 
 export default () => {
   const classes = Styles();
-  const [location, setLocation] = useState(LOCATIONS[1]);
+  const [location, setLocation] = useState(LOCATIONS[0]);
   const [showDetails, setShowDetails] = useState(false);
 
   // disable radio button keydown event
@@ -43,6 +43,10 @@ export default () => {
     setLocation(LOCATIONS.find((location) => location.name === "dublin"));
   };
 
+  const handleSF = () => {
+    setLocation(LOCATIONS.find((location) => location.name === "sf"));
+  };
+
   return (
     <Container className={classes.container} maxWidth={false}>
       <Fade duration={getFadeDuration()} bottom>
@@ -52,7 +56,7 @@ export default () => {
         <Container className={classes.textSection} maxWidth="xs">
           <p dangerouslySetInnerHTML={{ __html: contactStrings.intro }} />
           <p dangerouslySetInnerHTML={{ __html: contactStrings.questions }} />
-          <StyledButton
+          {/* <StyledButton
             href="#contact-map"
             className={classes.button}
             onClick={handleGalway}
@@ -68,6 +72,14 @@ export default () => {
             title={contactStrings.dublin}
           >
             {contactStrings.dublin}
+          </StyledButton> */}
+          <StyledButton
+            href="#contact-map"
+            className={classes.button}
+            onClick={handleSF}
+            title={contactStrings.sf}
+          >
+            {contactStrings.sf}
           </StyledButton>
         </Container>
         <Container className={classes.formContainer} maxWidth={false}>
