@@ -51,28 +51,28 @@ export default () => {
     last_device_used: null,
   });
 
-  if (garminData.last_activity_summary == null) {
-    fetchGarmin("last_activity", { include_details: true }).then((data) => {
-      setGarminData((prev) => {
-        return {
-          ...prev,
-          last_activity_summary: data.summary,
-          last_activity_details: data.details,
-        };
-      });
-    });
-  }
+  // if (garminData.last_activity_summary == null) {
+  //   fetchGarmin("last_activity", { include_details: true }).then((data) => {
+  //     setGarminData((prev) => {
+  //       return {
+  //         ...prev,
+  //         last_activity_summary: data.summary,
+  //         last_activity_details: data.details,
+  //       };
+  //     });
+  //   });
+  // }
 
-  if (garminData.last_device_used == null) {
-    fetchGarmin("last_device_used").then((data) => {
-      setGarminData((prev) => {
-        return {
-          ...prev,
-          last_device_used: data,
-        };
-      });
-    });
-  }
+  // if (garminData.last_device_used == null) {
+  //   fetchGarmin("last_device_used").then((data) => {
+  //     setGarminData((prev) => {
+  //       return {
+  //         ...prev,
+  //         last_device_used: data,
+  //       };
+  //     });
+  //   });
+  // }
 
   const chartData = useMemo(() => {
     return garminData.last_activity_details

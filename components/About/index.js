@@ -94,14 +94,14 @@ export default () => {
           </Grid>
         </Grid>
       </Container>
-      <Container className={classes.garminContent}>
+      {/* <Container className={classes.garminContent}>
         <Fade duration={getFadeDuration()} left>
           <GarminSummary />
         </Fade>
         <Fade duration={getFadeDuration()} right>
           <GarminLastActivity />
         </Fade>
-      </Container>
+      </Container> */}
     </Container>
   );
 };

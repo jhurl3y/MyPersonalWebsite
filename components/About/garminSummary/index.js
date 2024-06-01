@@ -14,16 +14,16 @@ export default () => {
     summary: null,
   });
 
-  if (garminData.summary == null) {
-    fetchGarmin("stats").then((data) => {
-      setGarminData((prev) => {
-        return {
-          ...prev,
-          summary: data,
-        };
-      });
-    });
-  }
+  // if (garminData.summary == null) {
+  //   fetchGarmin("stats").then((data) => {
+  //     setGarminData((prev) => {
+  //       return {
+  //         ...prev,
+  //         summary: data,
+  //       };
+  //     });
+  //   });
+  // }
 
   return (
     <>
