@@ -56,15 +56,13 @@ export const experienceStrings = {
   surveymonkeyGrowthDate: "2018 - 2021",
   surveymonkeyMLDate: "2021 - present",
   surveymonkeyGrowthTitle: "Growth Engineer, Momentive (formerly SurveyMonkey)",
-  surveymonkeyMLTitle: "Machine Learning Engineer, Momentive (formerly SurveyMonkey)",
-  surveymonkeyMLLocation: "Remote, Ireland",
+  surveymonkeyMLTitle: "Machine Learning Engineer, SurveyMonkey",
+  surveymonkeyMLLocation: "San Francisco, CA",
   surveymonkeyGrowthLocation: "Dublin, Ireland",
   surveymonkeyGrowthTasks:
     "Growth Hacking, Experimentation, Development, Product, Interviewing",
-  surveymonkeyMLTasks:
-    "Supporting DS to run ML algorithms in production",
-  surveymonkeyMLSkills:
-    "AI | Data Science | ML PLatform | Python",
+  surveymonkeyMLTasks: "Supporting DS to run ML algorithms in production",
+  surveymonkeyMLSkills: "AI | Data Science | ML Platform | Python",
   surveymonkeyGrowthSkills: "React | GraphQL | Python | Docker",
   exordoDate: "2016 - 2018",
   exordoTitle: "Software Engineer, Ex Ordo",
