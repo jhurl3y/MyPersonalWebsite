@@ -12,7 +12,7 @@ export const aboutStrings = {
     "Travelling is a big passion of mine. I have seen a lot of Europe, America, and been to Dubai + Cape Town.",
   friends:
     "Love socialising and having the craic over a few pints, and especially meeting new people.",
-  music: "Tunes/Likes",
+  music: "Tunes",
   garminSummary: "Garmin Summary",
   garminLastActivity: "Most Recent Activity",
   totalKilocalories: "Total Calories",

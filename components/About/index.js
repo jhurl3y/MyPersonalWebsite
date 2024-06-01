@@ -25,7 +25,7 @@ const SpotifyWidget = () => (
 
 const TwitterWidget = () => (
   <TwitterTimelineEmbed
-    sourceType="likes"
+    sourceType="profile"
     screenName="hurley_19"
     options={{
       height: WIDGET_HEIGHT,
@@ -82,16 +82,16 @@ export default () => {
       </Fade>
       <Container className={classes.musicContent}>
         <Grid container spacing={6}>
-          <Grid item xs={12} sm={12} md={6} className={classes.musicItem}>
+          <Grid item xs={12} sm={12} md={12} className={classes.musicItem}>
             <Fade duration={getFadeDuration()} left>
               <SpotifyWidget />
             </Fade>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} className={classes.musicItem}>
+          {/* <Grid item xs={12} sm={12} md={6} className={classes.musicItem}>
             <Fade duration={getFadeDuration()} right>
               <TwitterWidget />
             </Fade>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
       {/* <Container className={classes.garminContent}>
