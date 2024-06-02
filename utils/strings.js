@@ -2,7 +2,7 @@ export const aboutStrings = {
   about: "About",
   me: "Me:",
   intro:
-    "Hi, I'm James! 😃 Thanks for visiting my site. I'm a {age} year old fullstack software engineer living in Dublin, Ireland. I grew up in the lovely city of Galway in the west and lived there most of my life. You can read a little bit more about me below, and scroll through the pictures above.",
+    "Hi, I'm James! 😃 Thanks for visiting my site. I'm a {age} year old fullstack software/ML engineer living in San Francisco, CA. I grew up in the lovely city of Galway in the west and lived there most of my life. You can read a little bit more about me below, and scroll through the pictures above.",
   iLike: "What I like:",
   code:
     "Really passionate about all things tech. Love clean code, simple designs and playing with new tech.",
