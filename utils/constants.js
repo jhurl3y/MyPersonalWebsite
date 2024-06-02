@@ -22,14 +22,13 @@ export const BACKGROUNDS = [
   "five",
   "six",
   "seven",
-  // "eight",
+  "eight",
   "nine",
   "ten",
   "eleven",
   "twelve",
   "thirteen",
   "fourteen",
-  "fifteen",
 ];
 
 export const MOBILE_BACKGROUNDS = [
@@ -39,6 +38,7 @@ export const MOBILE_BACKGROUNDS = [
   "four",
   "five",
   "six",
+  "seven",
 ];
 
 export const FIRST_IMAGE_PATH = "/static/assets/images/first_image.jpg";
